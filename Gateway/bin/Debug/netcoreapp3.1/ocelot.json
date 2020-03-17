@@ -1,0 +1,29 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/identity",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.12.47",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/identity-service/identity"
+    },
+    {
+      "DownstreamPathTemplate": "/api/customer",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.12.47",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/customer-service/customer"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://192.168.12.47:5000"
+  }
+}
